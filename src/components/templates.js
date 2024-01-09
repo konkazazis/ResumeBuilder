@@ -34,7 +34,7 @@ function templates({ formData }) {
         <div className="bg-gray-200 p-8">
           <div className="max-w-2xl mx-auto bg-white p-6 rounded-md shadow-md">
             <header className="text-center mb-6">
-              <h1 className="text-3xl font-bold">{formData.firstname ? formData.firstname : "Your Name"}</h1>
+              <h1 className="text-3xl font-bold">{formData.fullname ? formData.fullname : "Your Name"}</h1>
               <p className="text-gray-600">Web Developer</p>
             </header>
     
@@ -42,10 +42,10 @@ function templates({ formData }) {
             <section className="mb-6">
               <h2 className="text-xl font-semibold mb-2">Contact Information</h2>
               <ul className="list-disc ml-6">
-                <li>Email: your.email@example.com</li>
-                <li>Phone: (123) 456-7890</li>
-                <li>LinkedIn: linkedin.com/in/yourname</li>
-                <li>Github: github.com/yourusername</li>
+                <li>Email : {formData.email ? formData.email : "your.email@example.com"}</li>
+                <li>Phone : {formData.phone ? formData.phone : "(123) 456-7890"}</li>
+                <li>LinkedIn : {formData.linkedin ? formData.linkedin : "linkedin.com/in/yourname"}</li>
+                <li>Github : {formData.github ? formData.github : "github.com/yourusername"}</li>
               </ul>
             </section>
     

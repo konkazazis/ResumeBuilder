@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="flex h-screen">
-      <div className='flex-1 bg-gray-100'>
+      <div className='flex-1 bg-gray-100 overflow-auto'>
         <Forms onSubmit={handleFormSubmit} formData={formData} setFormData={setFormData}/>
       </div>
       <div className='flex-1 bg-gray-200 float-left'>
