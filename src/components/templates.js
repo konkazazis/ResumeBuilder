@@ -1,34 +1,6 @@
 import React from 'react'
 
 function templates({ formData }) {
-    // return (
-    //     <div className="container mx-auto p-4">
-    //       <div className="max-w-md mx-auto  w-[20rem] h-[23rem] bg-white p-8 rounded shadow-md">
-    //         <h2 className="text-2xl font-semibold mb-4">Generated Resume</h2>
-    
-    //         {/* Display Personal Information */}
-    //         <div className="mb-4">
-    //           <h3 className="text-lg font-medium">Personal Information</h3>
-    //           <p className="text-gray-700">
-    //             {formData.firstName} {formData.lastName}
-    //           </p>
-    //         </div>
-    
-    //         {/* Display other fields as needed */}
-    //         {/* Example: Email and Phone */}
-    //         <div className="mb-4">
-    //           <h3 className="text-lg font-medium">Contact Information</h3>
-    //           <p className="text-gray-700">
-    //             Email: {formData.email} <br />
-    //             Phone: {formData.phone}
-    //           </p>
-    //         </div>
-    
-    //         {/* Add more sections for education, experience, skills, etc. as needed */}
-    //       </div>
-    //     </div>
-    //   );
-    // };
 
     return (
         <div className="bg-gray-200 p-8">
