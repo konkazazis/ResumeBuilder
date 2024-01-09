@@ -6,6 +6,8 @@ import Modal from 'react-modal';
 function Forms({formData, setFormData}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPersonalDetails, setSelectedPersonalDetails] = useState([]);
+  const [selectedWorkExperience, setSelectedWorkExperience] = useState([]);
+  const [selecteModal , setSelecteModal] = useState([]);
   
   const openModal = () => {
     setIsModalOpen(true);
@@ -101,7 +103,22 @@ function Forms({formData, setFormData}) {
                         />
                       </div>
                     ))
-                  ) : label === "testststs" } 
+                  ) : label === "Work Experience" ? (
+                    selectedWorkExperience.map((label, index) => (
+                      <div className="mb-4">
+                        <label className="block text-gray-700 text-sm font-bold mb-2">
+                          {label}
+                        </label>
+                        <input
+                          type="text"
+                          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                          placeholder={label}
+                          value={formData[label]}
+                          onChange={(e) => handleChange(e, label)}
+                        />
+                      </div>
+                  ))
+                  ) : <div>test</div>}
               </div>
               <button
                 type="button"
@@ -110,6 +127,7 @@ function Forms({formData, setFormData}) {
                 >
                 <FontAwesomeIcon icon={faPlus} style={{color: "#000000",}}/>
               </button>
+              {}
             </div>
           ))}
           
