@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Forms from './components/forms';
+import Templates from './components/templates';
 
 function App() {
+
+  const [formData, setFormData] = useState({});
+
+  const handleFormSubmit = (data) => {
+    setFormData(data);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex h-screen">
+      <div className='flex-1 bg-gray-100'>
+        <Forms onSubmit={handleFormSubmit} formData={formData} setFormData={setFormData}/>
+      </div>
+      <div className='flex-1 bg-gray-200 float-left'>
+        <Templates formData={formData} />
+      </div>
     </div>
   );
 }
