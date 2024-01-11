@@ -23,11 +23,13 @@ function templates({ formData }) {
             </section>
       
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
                 {/* Left Column */}
                 <div className="mb-6">
+                  
                   {/* Work Experience */}
                   <section className="mb-6">
-                    <h2 className="text-xl font-semibold mb-2">Work Experience</h2>
+                    <h2 className="text-xl font-semibold mb-2 border-b-2">Work Experience</h2>
                     <div>
                       <p className="text-lg font-semibold">Software Developer</p>
                       <p className="text-gray-600">Company Name, Start Date - End Date</p>
@@ -40,7 +42,7 @@ function templates({ formData }) {
                   </section>
 
                   <section className="mb-6">
-                    <h2 className="text-xl font-semibold mb-2">Education</h2>
+                    <h2 className="text-xl font-semibold mb-2 border-b-2">Education</h2>
                     <div>
                       <p className="text-lg font-semibold">Bachelor of Science in Computer Science</p>
                       <p className="text-gray-600">University Name, Graduation Year</p>
@@ -48,7 +50,7 @@ function templates({ formData }) {
                   </section>
 
                   <section className="mb-6">
-                    <h2 className="text-xl font-semibold mb-2">Languages</h2>
+                    <h2 className="text-xl font-semibold mb-2 border-b-2">Languages</h2>
                     <div>
                       <p className="text-lg font-semibold">Bachelor of Science in Computer Science</p>
                       <p className="text-gray-600">University Name, Graduation Year</p>
@@ -59,14 +61,11 @@ function templates({ formData }) {
                 {/* Right Column */}
                 <div>
                   <section>
-                    <h2 className="text-xl font-semibold mb-2">Projects</h2>
-                    <ul className="flex flex-wrap">
-                      <li className="bg-blue-500 text-white px-3 py-1 m-1 rounded">React</li>
-                      <li className="bg-blue-500 text-white px-3 py-1 m-1 rounded">JavaScript</li>
-                      <li className="bg-blue-500 text-white px-3 py-1 m-1 rounded">HTML</li>
-                      <li className="bg-blue-500 text-white px-3 py-1 m-1 rounded">CSS</li>
-                      {/* Add more skills as needed */}
-                    </ul>
+                    <h2 className="text-xl font-semibold mb-2 border-b-2">Projects</h2>
+                    <div>
+                      <p className="text-lg font-semibold">Bachelor of Science in Computer Science</p>
+                      <p className="text-gray-600">University Name, Graduation Year</p>
+                    </div>
                   </section>
                   {/* Skills */}
                   <section>

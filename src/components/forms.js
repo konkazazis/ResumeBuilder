@@ -1,10 +1,12 @@
 import React, {useState} from 'react'
 import PersonalDetails from './personalDetails';
+import WorkExperience from './workExperience';
+import Projects from './projects';
+import Education from './education';
+import Languages from './languages';
 
 function Forms({formData, setFormData}) {
-  const [selectedWorkExperience, setSelectedWorkExperience] = useState([]);
-  const [selecteModal , setSelecteModal] = useState([]);
-  
+
   const handleChange = (e, label) => {
     setFormData({
       ...formData,
@@ -24,7 +26,11 @@ function Forms({formData, setFormData}) {
         <h2 className="text-2xl font-semibold mb-4">Resume Builder</h2>
         
         <PersonalDetails handleChange={handleChange} formData={formData} />                                   
-  
+        <WorkExperience handleChange={handleChange} formData={formData} />
+        <Projects handleChange={handleChange} formData={formData} />  
+        <Education handleChange={handleChange} formData={formData} />
+        <Languages handleChange={handleChange} formData={formData} />
+
         <div className="mt-4">
           <button
             type="submit"
