@@ -20,6 +20,7 @@ function WorkExperience({handleChange, formData}) {
       const updatedWorkExperiences = [...workExperiences];
       updatedWorkExperiences[index][key] = value;
       setWorkExperiences(updatedWorkExperiences);
+      formData.workExperiences = updatedWorkExperiences;
     };
 
     return (

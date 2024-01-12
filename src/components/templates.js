@@ -1,7 +1,7 @@
 import React from 'react'
 
 function templates({ formData }) {
-
+    console.log(formData.workExperiences) 
     return (
         <div className="bg-gray-200 p-8">
           <div className="w-[45rem] h-[58rem] mx-auto bg-white p-6 rounded-md shadow-md">
@@ -31,13 +31,25 @@ function templates({ formData }) {
                   <section className="mb-6">
                     <h2 className="text-xl font-semibold mb-2 border-b-2">Work Experience</h2>
                     <div>
-                      <p className="text-lg font-semibold">Software Developer</p>
-                      <p className="text-gray-600">Company Name, Start Date - End Date</p>
-                      <ul className="list-disc ml-6">
-                        <li>Developed and maintained web applications.</li>
-                        <li>Collaborated with cross-functional teams.</li>
-                        {/* Add more points as needed */}
-                      </ul>
+                      {formData['workExperiences'] ? formData['workExperiences'].map((workExperience) => (
+                        <div>
+                          <p className="text-lg font-semibold">{workExperience.companyName}</p>
+                          <p className="text-gray-600">{workExperience.position}</p>
+                          <p className="text-gray-600">{workExperience.startDate} - {workExperience.endDate}</p>
+                          <ul className="list-disc ml-6">
+                            <li>{workExperience.description}</li>
+                          </ul>
+                        </div>
+                      )) : ( 
+                        <div>
+                          <p className="text-lg font-semibold">Company Name</p>
+                          <p className="text-gray-600">Position</p>
+                          <p className="text-gray-600">Start Date - End Date</p>
+                          <ul className="list-disc ml-6">
+                            <li>Description</li>
+                          </ul>
+                        </div>
+                      )}
                     </div>
                   </section>
 
