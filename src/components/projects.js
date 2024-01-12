@@ -37,7 +37,7 @@ function Projects({handleChange, formData}) {
         {projects.map((projects, index) => (
           <div key={index} className="mb-4">
               <div>
-                  <div className='mr-4'>
+                  <div>
                       <label className="text-sm font-medium text-gray-600">Project Name</label>
                       <input
                       type="text"

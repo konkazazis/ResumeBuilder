@@ -64,7 +64,7 @@ function WorkExperience({handleChange, formData}) {
                         <input
                             type="text"
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            value={workExperience.position}
+                            value={workExperience.startDate}
                             onChange={(e) => handleInputChange(index, 'position', e.target.value)}
                         />
                     </div>
@@ -73,17 +73,17 @@ function WorkExperience({handleChange, formData}) {
                         <input
                             type="text"
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            value={workExperience.position}
+                            value={workExperience.endDate}
                             onChange={(e) => handleInputChange(index, 'position', e.target.value)}
                         />
                     </div>
                 </div>
                 <div>
-                        <label className="mt-4 text-sm font-medium text-gray-600">End Date</label>
+                        <label className="mt-4 text-sm font-medium text-gray-600">Description</label>
                         <input
                             type="text"
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            value={workExperience.position}
+                            value={workExperience.description}
                             onChange={(e) => handleInputChange(index, 'position', e.target.value)}
                         />
                 </div>

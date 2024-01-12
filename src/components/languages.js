@@ -3,87 +3,73 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import Modal from 'react-modal';
 
-function Projects({handleChange, formData}) {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [selectedLanguages, setSelectedLanguages] = useState([]);
+function Languages({handleChange, formData}) {
+  const [languages, setLanguages] = useState([]);
 
-    const handleModal = () => {
-        setIsModalOpen(!isModalOpen);
-    };
-    const handleOptionClick = (option) => {
-        setSelectedLanguages([...selectedLanguages, option]);
-        handleModal();
-    };
+  const addLanguages = () => {
+    setLanguages([...languages, { languageName: '', level: ''}]);
+  };
 
-    const languages = [
-       
-    ];
+  const removeLanguages = (index) => {
+    const updatedLanguages = [...languages];
+    updatedLanguages.splice(index, 1);
+    setLanguages(updatedLanguages);
+  };
+
+  const handleInputChange = (index, key, value) => {
+    const updatedLanguages = [...languages];
+    updatedLanguages[index][key] = value;
+    setLanguages(updatedLanguages);
+  };
 
   return (
-    <div>
-        <h1 className='text-lg'>languages</h1>
-        {selectedLanguages.map((option) => (
-            <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2">
-                    {option}
-                </label>
-                <input
-                type="text"
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder={option}
-                value={formData[option]}
-                onChange={(e) => handleChange(e, option)}
-                />
-            </div>       
-        ))}
+      <div>
+        <h1 className="text-lg">Languages</h1>
+        
         <button
-            type="button"
-            className="text-white px-4 py-2 rounded-lg hover:bg-slate-200"
-            onClick={handleModal}
-            >
-            <FontAwesomeIcon icon={faPlus} style={{color: "#000000",}}/>
-        </button> 
-        <Modal
-            isOpen={isModalOpen}
-            onRequestClose={handleModal}
-            contentLabel="Example Modal"
-            className="bg-white border-2 rounded-md shadow-lg p-4 w-1/3 h-1/2"
-            style={
-              {
-                overlay: {
-                  position: 'fixed',
-                  backgroundColor: "none",
-                },
-                content: {
-                  width: '18rem',
-                  position: 'absolute',
-                  top: '10%',
-                  left: '15%',
-                  right: '10%',
-                  bottom: '10%',
-                  border: '1px solid #ccc',
-                  background: '#fff',
-                  WebkitOverflowScrolling: 'touch',
-                  borderRadius: '4px',
-                  outline: 'none',
-                  padding: '0',
-                }
-              }
-            }
+          type="button"
+          className="text-white px-4 py-2 rounded-lg hover:bg-slate-200"
+          onClick={addLanguages}
+        >
+           <FontAwesomeIcon icon={faPlus} style={{color: "#000000",}}/>
+        </button>
+
+        {languages.map((languages, index) => (
+          <div key={index} className="mb-4">
+              <div>
+                  <div>
+                      <label className="text-sm font-medium text-gray-600">Language</label>
+                      <input
+                      type="text"
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      value={languages.languageName}
+                      onChange={(e) => handleInputChange(index, 'companyName', e.target.value)}
+                      />
+                  </div>
+              
+                  <div>
+                      <label className="mt-4 text-sm font-medium text-gray-600">Level</label>
+                      <input
+                      type="text"
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      value={languages.level}
+                      onChange={(e) => handleInputChange(index, 'position', e.target.value)}
+                      />
+                  </div>
+              </div>
+             
+          <button
+              type="button"
+              className="mt-4 p-2 bg-red-500 text-white rounded-md"
+              onClick={() => removeLanguages(index)}
           >
-            <div>
-              {languages.map((label, index) => (
-                <div className='hover:bg-slate-300'>
-                  <button onClick={() => handleOptionClick(label)} className='text-l text-left w-[18rem] pl-2 '>
-                    {label}
-                  </button>
-                </div>
-              ))}
-            </div>
-          </Modal> 
-    </div>
-      
-  )
+              Remove
+          </button>
+
+      </div>
+      ))}
+  </div>
+  );
 }
 
-export default Projects
+export default Languages
