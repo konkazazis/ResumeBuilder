@@ -3,8 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import './components.css'
 
-function WorkExperience({handleChange, formData}) {
-    const [workExperiences, setWorkExperiences] = useState([]);
+function WorkExperience({workExperiences, setWorkExperiences}) {
 
     const addWorkExperience = () => {
       setWorkExperiences([...workExperiences, { companyName: '', position: '', startDate: '', endDate: '', description: ''}]);
@@ -20,7 +19,6 @@ function WorkExperience({handleChange, formData}) {
       const updatedWorkExperiences = [...workExperiences];
       updatedWorkExperiences[index][key] = value;
       setWorkExperiences(updatedWorkExperiences);
-      formData.workExperiences = updatedWorkExperiences;
     };
 
     return (
@@ -66,7 +64,7 @@ function WorkExperience({handleChange, formData}) {
                             type="text"
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             value={workExperience.startDate}
-                            onChange={(e) => handleInputChange(index, 'position', e.target.value)}
+                            onChange={(e) => handleInputChange(index, 'startDate', e.target.value)}
                         />
                     </div>
                     <div>
@@ -75,7 +73,7 @@ function WorkExperience({handleChange, formData}) {
                             type="text"
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             value={workExperience.endDate}
-                            onChange={(e) => handleInputChange(index, 'position', e.target.value)}
+                            onChange={(e) => handleInputChange(index, 'endDate', e.target.value)}
                         />
                     </div>
                 </div>
@@ -85,7 +83,7 @@ function WorkExperience({handleChange, formData}) {
                             type="text"
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             value={workExperience.description}
-                            onChange={(e) => handleInputChange(index, 'position', e.target.value)}
+                            onChange={(e) => handleInputChange(index, 'description', e.target.value)}
                         />
                 </div>
 

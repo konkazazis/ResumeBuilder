@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import Modal from 'react-modal';
 
-function PersonalDetails({handleChange, formData}) {
+function PersonalDetails({handleChange, details}) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedPersonalDetails, setSelectedPersonalDetails] = useState([]);
 
@@ -40,7 +40,7 @@ function PersonalDetails({handleChange, formData}) {
                 type="text"
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder={option}
-                value={formData[option]}
+                value={details[option]}
                 onChange={(e) => handleChange(e, option)}
                 />
             </div>       

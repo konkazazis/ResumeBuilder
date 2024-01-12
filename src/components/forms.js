@@ -5,19 +5,21 @@ import Projects from './projects';
 import Education from './education';
 import Languages from './languages';
 
-function Forms({formData, setFormData}) {
+function Forms({details, setDetails , workExperiences, setWorkExperiences}) {
 
   const handleChange = (e, label) => {
-    setFormData({
-      ...formData,
+    setDetails({
+      ...details,
+      [label]: e.target.value
+    });
+    setWorkExperiences({
+      ...workExperiences,
       [label]: e.target.value
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add logic to handle form submission (e.g., save data, generate resume, etc.)
-    console.log('Form submitted:', formData);
   };
 
   return (
@@ -25,11 +27,11 @@ function Forms({formData, setFormData}) {
       <form onSubmit={handleSubmit}>
         <h2 className="text-2xl font-semibold mb-4">Resume Builder</h2>
         
-        <PersonalDetails handleChange={handleChange} formData={formData} />                                   
-        <WorkExperience handleChange={handleChange} formData={formData} />
-        <Projects handleChange={handleChange} formData={formData} />  
-        <Education handleChange={handleChange} formData={formData} />
-        <Languages handleChange={handleChange} formData={formData} />
+        <PersonalDetails handleChange={handleChange} details={details} />                                   
+        <WorkExperience workExperiences={workExperiences} setWorkExperiences={setWorkExperiences} />
+        <Projects handleChange={handleChange}  />  
+        <Education handleChange={handleChange} />
+        <Languages handleChange={handleChange} />
 
         <div className="mt-4">
           <button

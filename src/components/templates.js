@@ -1,12 +1,12 @@
 import React from 'react'
 
-function templates({ formData }) {
-    console.log(formData.workExperiences) 
+function templates({ details, workExperiences }) {
+    
     return (
         <div className="bg-gray-200 p-8">
           <div className="w-[45rem] h-[58rem] mx-auto bg-white p-6 rounded-md shadow-md">
             <header className="text-left mb-6">
-              <h1 className="text-3xl font-bold">{formData.fullname ? formData.fullname : "Your Name"}</h1>
+              <h1 className="text-3xl font-bold">{details.fullname ? details.fullname : "Your Name"}</h1>
               <p className="text-gray-600">Web Developer</p>
               <hr className="border-gray-400 flex-grow mt-2" />
             </header>
@@ -14,10 +14,10 @@ function templates({ formData }) {
             {/* Contact Information */}
             <section className="mb-6">
               <ul className="text-sm flex justify-between">
-                <li>{formData.email ? formData.email : "your.email@example.com"}</li>
-                <li>{formData.phone ? formData.phone : "(123) 456-7890"}</li>
-                <li>{formData.linkedin ? formData.linkedin : "linkedin.com/in/yourname"}</li>
-                <li>{formData.github ? formData.github : "github.com/yourusername"}</li>
+                <li>{details.email ? details.email : "your.email@example.com"}</li>
+                <li>{details.phone ? details.phone : "(123) 456-7890"}</li>
+                <li>{details.linkedin ? details.linkedin : "linkedin.com/in/yourname"}</li>
+                <li>{details.github ? details.github : "github.com/yourusername"}</li>
               </ul>
               <hr className="border-gray-400 flex-grow mt-2" />
             </section>
@@ -31,13 +31,13 @@ function templates({ formData }) {
                   <section className="mb-6">
                     <h2 className="text-xl font-semibold mb-2 border-b-2">Work Experience</h2>
                     <div>
-                      {formData['workExperiences'] ? formData['workExperiences'].map((workExperience) => (
+                      {workExperiences ? workExperiences.map((index) => (
                         <div>
-                          <p className="text-lg font-semibold">{workExperience.companyName}</p>
-                          <p className="text-gray-600">{workExperience.position}</p>
-                          <p className="text-gray-600">{workExperience.startDate} - {workExperience.endDate}</p>
+                          <p className="text-lg font-semibold">{index.companyName}</p>
+                          <p className="text-gray-600">{index.position}</p>
+                          <p className="text-gray-600">{index.startDate} - {index.endDate}</p>
                           <ul className="list-disc ml-6">
-                            <li>{workExperience.description}</li>
+                            <li>{index.description}</li>
                           </ul>
                         </div>
                       )) : ( 
