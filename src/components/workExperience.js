@@ -1,59 +1,105 @@
 import React, {useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import './components.css'
 
 function WorkExperience({handleChange, formData}) {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [selectedWorkExperience, setSelectedWorkExperience] = useState([]);
+    const [workExperiences, setWorkExperiences] = useState([]);
 
-    const handleModal = () => {
-        setIsModalOpen(!isModalOpen);
+    const addWorkExperience = () => {
+      setWorkExperiences([...workExperiences, { companyName: '', position: '', startDate: '', endDate: '', description: ''}]);
     };
-    const handleOptionClick = (option) => {
-        setSelectedWorkExperience([...selectedWorkExperience, option]);
-        handleModal();
+  
+    const removeWorkExperience = (index) => {
+      const updatedWorkExperiences = [...workExperiences];
+      updatedWorkExperiences.splice(index, 1);
+      setWorkExperiences(updatedWorkExperiences);
+    };
+  
+    const handleInputChange = (index, key, value) => {
+      const updatedWorkExperiences = [...workExperiences];
+      updatedWorkExperiences[index][key] = value;
+      setWorkExperiences(updatedWorkExperiences);
     };
 
-    const workExperience = [
-        "company",
-        "position",
-        "city",
-        "state",
-        "start",
-        "end",
-        "description",
-    ];
-
-  return (
-    <div>
-        <h1 className='text-lg'>Work Experience</h1>
-        {selectedWorkExperience.map((option) => (
-            <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2">
-                    {option}
-                </label>
-                <input
-                type="text"
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder={option}
-                value={formData[option]}
-                onChange={(e) => handleChange(e, option)}
-                />
-            </div>       
-        ))}
-        <button
+    return (
+        <div>
+          <h1 className="text-lg">Work Experience</h1>
+          
+          <button
             type="button"
             className="text-white px-4 py-2 rounded-lg hover:bg-slate-200"
-            onClick={handleModal}
+            onClick={addWorkExperience}
+          >
+             <FontAwesomeIcon icon={faPlus} style={{color: "#000000",}}/>
+          </button>
+
+          {workExperiences.map((workExperience, index) => (
+            <div key={index} className="mb-4">
+                <div className='flex'>
+                    <div className='mr-4'>
+                        <label className="text-sm font-medium text-gray-600">Company Name</label>
+                        <input
+                        type="text"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        value={workExperience.companyName}
+                        onChange={(e) => handleInputChange(index, 'companyName', e.target.value)}
+                        />
+                    </div>
+                
+                    <div>
+                        <label className="mt-4 text-sm font-medium text-gray-600">Position</label>
+                        <input
+                        type="text"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        value={workExperience.position}
+                        onChange={(e) => handleInputChange(index, 'position', e.target.value)}
+                        />
+                    </div>
+                </div>
+               
+                <div className='flex'>
+                    <div className='mr-4'>
+                        <label className="mt-4 text-sm font-medium text-gray-600">Start Date</label>
+                        <input
+                            type="text"
+                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            value={workExperience.position}
+                            onChange={(e) => handleInputChange(index, 'position', e.target.value)}
+                        />
+                    </div>
+                    <div>
+                        <label className="mt-4 text-sm font-medium text-gray-600">End Date</label>
+                        <input
+                            type="text"
+                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            value={workExperience.position}
+                            onChange={(e) => handleInputChange(index, 'position', e.target.value)}
+                        />
+                    </div>
+                </div>
+                <div>
+                        <label className="mt-4 text-sm font-medium text-gray-600">End Date</label>
+                        <input
+                            type="text"
+                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            value={workExperience.position}
+                            onChange={(e) => handleInputChange(index, 'position', e.target.value)}
+                        />
+                </div>
+
+            <button
+                type="button"
+                className="mt-4 p-2 bg-red-500 text-white rounded-md"
+                onClick={() => removeWorkExperience(index)}
             >
-            <FontAwesomeIcon icon={faPlus} style={{color: "#000000",}}/>
-        </button> 
-        <div className='bg-white w-full h-[5rem] rounded-md '>
-            
+                Remove
+            </button>
+
         </div>
+        ))}
     </div>
-      
-  )
+    );
 }
 
 export default WorkExperience
