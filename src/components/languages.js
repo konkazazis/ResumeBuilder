@@ -3,8 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import Modal from 'react-modal';
 
-function Languages({handleChange, formData}) {
-  const [languages, setLanguages] = useState([]);
+function Languages({languages, setLanguages}) {
 
   const addLanguages = () => {
     setLanguages([...languages, { languageName: '', level: ''}]);
@@ -43,7 +42,7 @@ function Languages({handleChange, formData}) {
                       type="text"
                       className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       value={languages.languageName}
-                      onChange={(e) => handleInputChange(index, 'companyName', e.target.value)}
+                      onChange={(e) => handleInputChange(index, 'languageName', e.target.value)}
                       />
                   </div>
                   
@@ -53,11 +52,12 @@ function Languages({handleChange, formData}) {
                       <select
                         className="shadow appearance-none border rounded w-full py-2 px-3 pr-8 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={languages.level}
-                        onChange={(e) => handleInputChange(index, 'position', e.target.value)}
+                        onChange={(e) => handleInputChange(index, 'level', e.target.value)}
                       >
-                        <option value="beginner">Beginner</option>
-                        <option value="intermediate">Intermediate</option>
-                        <option value="advanced">Advanced</option>
+                        <option value="">Select Level</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
                       </select>
                       <div className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                         <svg

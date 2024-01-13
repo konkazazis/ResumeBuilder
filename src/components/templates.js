@@ -1,6 +1,6 @@
 import React from 'react'
 
-function templates({ details, workExperiences }) {
+function templates({ details, workExperiences, projects, education, languages, skills }) {
     
     return (
         <div className="bg-gray-200 p-8">
@@ -31,7 +31,7 @@ function templates({ details, workExperiences }) {
                   <section className="mb-6">
                     <h2 className="text-xl font-semibold mb-2 border-b-2">Work Experience</h2>
                     <div>
-                      {workExperiences ? workExperiences.map((index) => (
+                      {workExperiences.length !== 0  ? workExperiences.map((index) => (
                         <div>
                           <p className="text-lg font-semibold">{index.companyName}</p>
                           <p className="text-gray-600">{index.position}</p>
@@ -55,40 +55,68 @@ function templates({ details, workExperiences }) {
 
                   <section className="mb-6">
                     <h2 className="text-xl font-semibold mb-2 border-b-2">Education</h2>
-                    <div>
-                      <p className="text-lg font-semibold">Bachelor of Science in Computer Science</p>
-                      <p className="text-gray-600">University Name, Graduation Year</p>
-                    </div>
+                    {education.length !== 0 ? education.map((index) => (
+                      <div>
+                        <p className="text-lg font-semibold">{index.uniName}</p>
+                        <p className="text-gray-600">{index.description}</p>
+                      </div>
+                    )) : (
+                      <div>
+                        <p className="text-lg font-semibold">University Name</p>
+                        <p className="text-gray-600">Description</p>
+                      </div>
+                    )}
                   </section>
 
                   <section className="mb-6">
                     <h2 className="text-xl font-semibold mb-2 border-b-2">Languages</h2>
-                    <div>
-                      <p className="text-lg font-semibold">Bachelor of Science in Computer Science</p>
-                      <p className="text-gray-600">University Name, Graduation Year</p>
-                    </div>
+                    {languages.length !== 0 ? languages.map((index) => (
+                      <div>
+                        <p className="text-lg font-semibold">{index.languageName}</p>
+                        <p className="text-gray-600">{index.level}</p>
+                      </div>
+                    )) : (
+                      <div>
+                        <p className="text-lg font-semibold">Language Name</p>
+                        <p className="text-gray-600">Level</p>
+                      </div>
+                    )}  
                   </section>
                 </div>
 
                 {/* Right Column */}
                 <div>
                   <section>
-                    <h2 className="text-xl font-semibold mb-2 border-b-2">Projects</h2>
                     <div>
-                      <p className="text-lg font-semibold">Bachelor of Science in Computer Science</p>
-                      <p className="text-gray-600">University Name, Graduation Year</p>
+                      <h2 className="text-xl font-semibold mb-2 border-b-2">Projects</h2>
+                      {projects.length !==0 ? projects.map((project) => (
+                          <div>
+                            <p className="text-lg font-semibold">{project.projectName}</p>
+                            <p className="text-gray-600">{project.description}</p>
+                          </div>
+                      )) : (
+                          <div>
+                            <p className="text-lg font-semibold">Project Name</p>
+                            <p className="text-gray-600">Description</p>
+                          </div>
+                      )}
                     </div>
                   </section>
                   {/* Skills */}
+
                   <section>
-                    <h2 className="text-xl font-semibold mb-2">Skills</h2>
-                    <ul className="flex flex-wrap">
-                      <li className="bg-blue-500 text-white px-3 py-1 m-1 rounded">React</li>
-                      <li className="bg-blue-500 text-white px-3 py-1 m-1 rounded">JavaScript</li>
-                      <li className="bg-blue-500 text-white px-3 py-1 m-1 rounded">HTML</li>
-                      <li className="bg-blue-500 text-white px-3 py-1 m-1 rounded">CSS</li>
-                      {/* Add more skills as needed */}
-                    </ul>
+                    <h2 className="text-xl font-semibold mb-2 border-b-2">Skills</h2>
+                    <div className='flex'>
+                      {skills.length !== 0 ? skills.map((index) => (
+                        <ul className="flex flex-wrap">
+                          <li className="bg-blue-500 text-white px-3 py-1 m-1 rounded">{index.skillName}</li>
+                        </ul>
+                      )) : (
+                        <ul className="flex flex-wrap">
+                          <li className="bg-blue-500 text-white px-3 py-1 m-1 rounded">Skill Name</li>
+                        </ul>
+                      )}
+                    </div>
                   </section>
                 </div>
               </div>

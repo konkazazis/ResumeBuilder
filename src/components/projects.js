@@ -2,9 +2,9 @@ import React, {useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import Modal from 'react-modal';
+import './components.css'
 
-function Projects({handleChange, formData}) {
-  const [projects, setProjects] = useState([]);
+function Projects({projects, setProjects}) {
 
   const addProjects = () => {
     setProjects([...projects, { projectName: '', description: ''}]);
@@ -43,7 +43,7 @@ function Projects({handleChange, formData}) {
                       type="text"
                       className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       value={projects.projectName}
-                      onChange={(e) => handleInputChange(index, 'companyName', e.target.value)}
+                      onChange={(e) => handleInputChange(index, 'projectName', e.target.value)}
                       />
                   </div>
               
@@ -53,7 +53,7 @@ function Projects({handleChange, formData}) {
                       type="text"
                       className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       value={projects.description}
-                      onChange={(e) => handleInputChange(index, 'position', e.target.value)}
+                      onChange={(e) => handleInputChange(index, 'description', e.target.value)}
                       />
                   </div>
               </div>

@@ -3,8 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import Modal from 'react-modal';
 
-function Projects({handleChange, formData}) {
-  const [education, setEducation] = useState([]);
+function Projects({education, setEducation}) {
 
   const addEducation = () => {
     setEducation([...education, { uniName: '', description: ''}]);
@@ -34,7 +33,7 @@ function Projects({handleChange, formData}) {
            <FontAwesomeIcon icon={faPlus} style={{color: "#000000",}}/>
         </button>
 
-        {education.map((projects, index) => (
+        {education.map((education, index) => (
           <div key={index} className="mb-4">
               <div>
                   <div>
@@ -43,7 +42,7 @@ function Projects({handleChange, formData}) {
                       type="text"
                       className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       value={education.uniName}
-                      onChange={(e) => handleInputChange(index, 'companyName', e.target.value)}
+                      onChange={(e) => handleInputChange(index, 'uniName', e.target.value)}
                       />
                   </div>
               
@@ -53,7 +52,7 @@ function Projects({handleChange, formData}) {
                       type="text"
                       className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       value={education.description}
-                      onChange={(e) => handleInputChange(index, 'position', e.target.value)}
+                      onChange={(e) => handleInputChange(index, 'description', e.target.value)}
                       />
                   </div>
               </div>

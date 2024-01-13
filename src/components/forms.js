@@ -4,16 +4,14 @@ import WorkExperience from './workExperience';
 import Projects from './projects';
 import Education from './education';
 import Languages from './languages';
+import Skills from './skills';
 
-function Forms({details, setDetails , workExperiences, setWorkExperiences}) {
+function Forms({details, setDetails , workExperiences, setWorkExperiences, projects, 
+  setProjects, education, setEducation, languages, setLanguages, skills, setSkills}) {
 
   const handleChange = (e, label) => {
     setDetails({
       ...details,
-      [label]: e.target.value
-    });
-    setWorkExperiences({
-      ...workExperiences,
       [label]: e.target.value
     });
   };
@@ -29,9 +27,10 @@ function Forms({details, setDetails , workExperiences, setWorkExperiences}) {
         
         <PersonalDetails handleChange={handleChange} details={details} />                                   
         <WorkExperience workExperiences={workExperiences} setWorkExperiences={setWorkExperiences} />
-        <Projects handleChange={handleChange}  />  
-        <Education handleChange={handleChange} />
-        <Languages handleChange={handleChange} />
+        <Education education={education} setEducation={setEducation} />
+        <Languages languages={languages} setLanguages={setLanguages} />
+        <Projects projects={projects} setProjects={setProjects} /> 
+        <Skills skills={skills} setSkills={setSkills} />
 
         <div className="mt-4">
           <button
