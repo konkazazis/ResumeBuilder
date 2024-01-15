@@ -30,7 +30,7 @@ function Forms({details, setDetails , workExperiences, setWorkExperiences, proje
       const imgData = canvas.toDataURL('image/png');
       const pdf = new jsPDF();
       pdf.addImage(imgData, 'PNG', 0, 0);
-      pdf.save('resume.pdf');
+      pdf.save('Resume.pdf');
     });
   };
 
@@ -51,12 +51,11 @@ function Forms({details, setDetails , workExperiences, setWorkExperiences, proje
           <button
             type="submit"
             className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800"
+            onClick={downloadAsPDF}
           >
-            Generate Resume
+            Download Resume
           </button>
-          <button onClick={downloadAsPDF}>Download as PDF</button>
-        </div>
-        
+        </div>     
       </form>
     </div>
   );

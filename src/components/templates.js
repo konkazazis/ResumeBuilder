@@ -4,7 +4,7 @@ function templates({ details, workExperiences, projects, education, languages, s
     
     return (
         <div className="bg-gray-200 p-8">
-          <div id="resume"  className="w-[45rem] h-[58rem] mx-auto bg-white p-6 rounded-md shadow-md">
+          <div id="resume"  className="w-[210mm] h-[297mm] mx-auto bg-white p-6 rounded-md shadow-md">
             <header className="text-left mb-6">
               <h1 className="text-3xl font-bold">{details.fullname ? details.fullname : "Your Name"}</h1>
               <p className="text-gray-600">Web Developer</p>
