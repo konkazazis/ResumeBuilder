@@ -5,6 +5,9 @@ import Projects from './projects';
 import Education from './education';
 import Languages from './languages';
 import Skills from './skills';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+import Templates from './templates';
 
 function Forms({details, setDetails , workExperiences, setWorkExperiences, projects, 
   setProjects, education, setEducation, languages, setLanguages, skills, setSkills}) {
@@ -19,6 +22,18 @@ function Forms({details, setDetails , workExperiences, setWorkExperiences, proje
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+
+  const downloadAsPDF = () => {
+    const input = document.getElementById('resume'); // Replace 'entire-page' with the ID of the element you want to capture
+
+    html2canvas(input).then((canvas) => {
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF();
+      pdf.addImage(imgData, 'PNG', 0, 0);
+      pdf.save('resume.pdf');
+    });
+  };
+
 
   return (
     <div className="container p-8">
@@ -39,6 +54,7 @@ function Forms({details, setDetails , workExperiences, setWorkExperiences, proje
           >
             Generate Resume
           </button>
+          <button onClick={downloadAsPDF}>Download as PDF</button>
         </div>
         
       </form>
