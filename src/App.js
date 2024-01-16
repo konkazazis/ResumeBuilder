@@ -1,45 +1,28 @@
-import React, { useState } from 'react';
 import './App.css';
-import Forms from './components/forms';
-import Templates from './components/templates';
+import React, { useState } from 'react';
+import { Link, Route, Routes } from 'react-router-dom';
+
+import Mainpage from './components/mainpage';
+import Home from './components/home';
+import LandingPage from './components/landingpage';
+
 
 function App() {
 
-  const [details, setDetails] = useState({});
-  const [workExperiences, setWorkExperiences] = useState([]);
-  const [projects, setProjects] = useState([]);
-  const [education, setEducation] = useState([]);
-  const [languages, setLanguages] = useState([]);
-  const [skills, setSkills] = useState([]);
-
   return (
-    <div className="flex h-screen">
-      <div className='w-[38%] bg-gray-100 overflow-auto'>
-        <Forms 
-          details={details} 
-          setDetails={setDetails} 
-          workExperiences={workExperiences} 
-          setWorkExperiences={setWorkExperiences} 
-          projects={projects}
-          setProjects={setProjects}
-          education={education}
-          setEducation={setEducation}
-          languages={languages}
-          setLanguages={setLanguages}
-          skills={skills}
-          setSkills={setSkills}
-        />
-      </div>
-      <div className='flex-1 bg-gray-200 float-left overflow-y-auto'>
-        <Templates 
-          details={details} 
-          workExperiences={workExperiences} 
-          projects={projects}
-          education={education}
-          languages={languages}
-          skills={skills}
-        />
-      </div>
+    <div>
+      <Link to='/'></Link>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+      </Routes>
+      <Link to='/mainpage'></Link>
+      <Routes>
+        <Route path="/mainpage" element={<Mainpage />} />
+      </Routes>
+      <Link to='mainpage/home'></Link>
+      <Routes>
+        <Route path="mainpage/home" element={<Home />} />
+      </Routes>
     </div>
   );
 }
