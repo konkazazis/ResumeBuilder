@@ -30,7 +30,7 @@ function App() {
           setSkills={setSkills}
         />
       </div>
-      <div className='flex-1 bg-gray-200 float-left overflow-auto'>
+      <div className='flex-1 bg-gray-200 float-left overflow-y-auto'>
         <Templates 
           details={details} 
           workExperiences={workExperiences} 
