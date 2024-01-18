@@ -11,17 +11,10 @@ function App() {
 
   return (
     <div>
-      <Link to='/'></Link>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-      </Routes>
-      <Link to='/mainpage'></Link>
-      <Routes>
         <Route path="/mainpage" element={<Mainpage />} />
-      </Routes>
-      <Link to='mainpage/home'></Link>
-      <Routes>
-        <Route path="mainpage/home" element={<Home />} />
+        <Route path="/mainpage/home" element={<Home />} />
       </Routes>
     </div>
   );
