@@ -6,6 +6,7 @@ import Create from './components/create';
 import Design from './components/design';
 import Home from './components/home';
 import LandingPage from './components/landingpage';
+import AboutUs from './components/aboutus';
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           />} 
         />
         <Route path="/design" element={<Design />} />
+        <Route path="/aboutus" element={<AboutUs />} />
       </Routes>
     </div>
   );

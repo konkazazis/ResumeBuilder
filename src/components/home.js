@@ -10,9 +10,9 @@ function Home() {
          <header className="h-16 flex justify-center items-center mb-8">
                 <nav className='w-[80%] sticky top-0 flex justify-between'>
                     <div className='flex items-center '>
-                        <h1 className='text-xl font-semibold italic'>
+                        <Link className='mr-10 hover:scale-110 transition-transform duration-200' to='/'><button><h1 className='text-xl font-semibold italic'>
                             Job-Ready
-                        </h1>
+                        </h1></button></Link> 
                     </div>
                     <div className=''>
                         <ul className='flex items-center'>
