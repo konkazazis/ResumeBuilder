@@ -7,16 +7,9 @@ import Languages from './languages';
 import Skills from './skills';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-import Templates from './templates';
 
-function Forms() {
-
-  const [details, setDetails] = useState({});
-  const [workExperiences, setWorkExperiences] = useState([]);
-  const [projects, setProjects] = useState([]);
-  const [education, setEducation] = useState([]);
-  const [languages, setLanguages] = useState([]);
-  const [skills, setSkills] = useState([]);
+function Forms({ details, setDetails, workExperiences, setWorkExperiences, projects, setProjects, education, 
+  setEducation, languages, setLanguages, skills, setSkills }) {
 
   const handleChange = (e, label) => {
     setDetails({

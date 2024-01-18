@@ -1,6 +1,6 @@
 import {React, useState} from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
-import Mainpage from './mainpage';
+
 
 const LandingPage = () => {
 
@@ -16,9 +16,7 @@ const LandingPage = () => {
                     </div>
                     <div className=''>
                         <ul className='flex items-center'>
-                            <li className='mr-10'>Home</li>
-                            <li className='mr-10'>Create</li>
-                            <li className='mr-10'>Design</li>
+                            <li className='mr-10'>About us</li>
                             <li className=' text-white mr-2 cursor-pointer bg-sky-400 rounded-md px-4 py-2 shadow-md'>Login</li>
                             <li className='text-white cursor-pointer bg-sky-400 rounded-md px-4 py-2 shadow-md'>Sign Up</li>
                         </ul>
@@ -31,7 +29,7 @@ const LandingPage = () => {
                     <div className='p-10'>
                         <h1 className='text-5xl font-semibold mb-4'>Create your resume in minutes</h1>
                         <p className='text-2xl font-semibold'>Get started with our easy-to-use resume builder now.</p>
-                        <Link to='/mainpage'> <button className='bg-sky-400 rounded-md px-4 py-2 shadow-md mt-4'>Get Started</button> </Link>
+                        <Link to='/home'> <button className='text-white bg-sky-400 rounded-md px-4 py-2 shadow-md mt-4'>Get Started</button> </Link>
                     </div>
                     <div className='w-[50%]'>
                         <img src="https://www.freepnglogos.com/uploads/website-logo-png/website-logo-website-logo-png-transparent-svg-vector-bie-supply-1.png" alt="" className='w-[100%]' />

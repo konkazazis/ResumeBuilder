@@ -1,10 +1,10 @@
-import {React, useState} from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
+import Forms from './forms';
+import Plain from './templates/plain';
 
-import SavedResumes from './savedResumes';
-
-function Home() {
-    
+function create( { details, setDetails, workExperiences, setWorkExperiences, projects, setProjects, education, 
+    setEducation, languages, setLanguages, skills, setSkills }) {
   return (
     <div>
          <header className="h-16 flex justify-center items-center mb-8">
@@ -28,17 +28,37 @@ function Home() {
                     </div>
                 </nav>
             </header>
-            <div className='flex h-screen p-8'>
+
+            <div className='flex h-screen'>
                 <div className='w-[38%] overflow-auto'>
-                    <SavedResumes />
+                    <Forms 
+                        details={details} 
+                        setDetails={setDetails} 
+                        workExperiences={workExperiences} 
+                        setWorkExperiences={setWorkExperiences} 
+                        projects={projects}
+                        setProjects={setProjects}
+                        education={education}
+                        setEducation={setEducation}
+                        languages={languages}
+                        setLanguages={setLanguages}
+                        skills={skills}
+                        setSkills={setSkills}
+                    />
                 </div>
                 <div className='flex-1 float-left overflow-y-auto'>
-                    
+                    <Plain 
+                        details={details} 
+                        workExperiences={workExperiences} 
+                        projects={projects}
+                        education={education}
+                        languages={languages}
+                        skills={skills}
+                    />
                 </div>
             </div>
     </div>
-    
   )
 }
 
-export default Home
+export default create
