@@ -23,6 +23,14 @@ function Settings() {
                     </div>
                 </nav>
             </header>
+            <div className='flex h-screen p-8'>
+                <div className='w-[40%] overflow-auto'>
+                   
+                </div>
+                <div className='flex-1 float-left overflow-y-auto bg-slate-100'>
+                    
+                </div>
+            </div>
     </div>
   )
 }

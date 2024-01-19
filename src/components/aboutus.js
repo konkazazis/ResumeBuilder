@@ -5,7 +5,7 @@ function aboutus() {
   return (
     <div>
     <header className="h-16 flex justify-center items-center mb-8">
-      <nav className='w-[80%] sticky top-0 flex justify-between'>
+      <nav className='w-[80%] sticky top-0 flex mt-4 justify-between'>
           <div className='flex items-center '>
             <Link className='mr-10 hover:scale-110 transition-transform duration-200' to='/'><button><h1 className='text-xl font-semibold italic'>
               Job-Ready
