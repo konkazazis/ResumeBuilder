@@ -12,16 +12,11 @@ function aboutus() {
             </h1></button></Link> 
           </div>
           <div className=''>
-              <ul className='flex items-center'>
-                  <Link className='mr-10 hover:scale-110 transition-transform duration-200' to='/home'><button><li>Home</li></button></Link> 
-                  <Link className='mr-10 hover:scale-110 transition-transform duration-200' to='/create'><button><li>Create</li></button></Link> 
-                  <Link className='mr-10 hover:scale-110 transition-transform duration-200' to='/design'><button><li>Design</li></button></Link> 
-                  <li className=' text-white mr-2 cursor-pointer bg-sky-400 rounded-md px-4 py-2 shadow-md'>
-                      <button>
-                          USER_IMAGE_AND_NAME
-                      </button>
-                  </li>
-              </ul>
+                        <ul className='flex items-center'>
+                        <Link className='mr-10 hover:scale-110 transition-transform duration-200' to='/aboutus'><button><li>About us</li></button></Link> 
+                            <li className=' text-white mr-2 cursor-pointer bg-sky-400 rounded-md px-4 py-2 shadow-md'>Login</li>
+                            <li className='text-white cursor-pointer bg-sky-400 rounded-md px-4 py-2 shadow-md'>Sign Up</li>
+                        </ul>
           </div>
       </nav>
     </header>

@@ -19,11 +19,11 @@ function create( { details, setDetails, workExperiences, setWorkExperiences, pro
                             <Link className='mr-10 hover:scale-110 transition-transform duration-200' to='/home'><button><li>Home</li></button></Link> 
                             <Link className='mr-10 hover:scale-110 transition-transform duration-200' to='/create'><button><li>Create</li></button></Link> 
                             <Link className='mr-10 hover:scale-110 transition-transform duration-200' to='/design'><button><li>Design</li></button></Link> 
-                            <li className=' text-white mr-2 cursor-pointer bg-sky-400 rounded-md px-4 py-2 shadow-md'>
-                                <button>
-                                    USER_IMAGE_AND_NAME
-                                </button>
-                            </li>
+                            <li className='cursor-pointer'>
+                      <button>
+                        <img  className=" rounded-full" src="https://picsum.photos/40" />
+                      </button>
+                  </li>
                         </ul>
                     </div>
                 </nav>

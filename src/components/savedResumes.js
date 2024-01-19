@@ -5,9 +5,17 @@ function SavedResumes() {
     <div>
         <div>
             <h1 className='mt-4 mb-10 text-3xl'>My Resumes</h1>
-            <div className='w-28 h-28 bg-slate-100 shadow-md rounded-md'>
-
+            <div className='flex'>
+              <div className='w-28 h-28 mr-4 bg-slate-100 shadow-md rounded-md'>
+                  
+              </div>
+              <div className='w-28 h-28 bg-white shadow-md rounded-md'>
+                  <div className='flex justify-center items-center h-full'>
+                      <h1 className='text-4xl'>+</h1>
+                  </div>
+              </div>
             </div>
+           
         </div>
     </div>
   )

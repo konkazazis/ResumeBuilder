@@ -16,12 +16,12 @@ function Home() {
                     </div>
                     <div className=''>
                         <ul className='flex items-center'>
-                            <Link className='mr-10 hover:scale-110 transition-transform duration-200' to='/home'><button><li>Home</li></button></Link> 
-                            <Link className='mr-10 hover:scale-110 transition-transform duration-200' to='/create'><button><li>Create</li></button></Link> 
-                            <Link className='mr-10 hover:scale-110 transition-transform duration-200' to='/design'><button><li>Design</li></button></Link> 
-                            <li className=' text-white mr-2 cursor-pointer bg-sky-400 rounded-md px-4 py-2 shadow-md'>
+                            <Link className='mr-10 hover:scale-110 transition-transform duration-200' to='/home'><button><li>Resumes</li></button></Link> 
+                            <Link className='mr-10 hover:scale-110 transition-transform duration-200' to='/settings'><button><li>Settings</li></button></Link> 
+                            <Link className='mr-10 hover:scale-110 transition-transform duration-200' to='/aboutus'><button><li>About us</li></button></Link> 
+                            <li className='cursor-pointer'>
                                 <button>
-                                    USER_IMAGE_AND_NAME
+                                    <img  className=" rounded-full" src="https://picsum.photos/40" />
                                 </button>
                             </li>
                         </ul>
@@ -29,10 +29,10 @@ function Home() {
                 </nav>
             </header>
             <div className='flex h-screen p-8'>
-                <div className='w-[38%] overflow-auto'>
+                <div className='w-[40%] overflow-auto'>
                     <SavedResumes />
                 </div>
-                <div className='flex-1 float-left overflow-y-auto'>
+                <div className='flex-1 float-left overflow-y-auto bg-slate-100'>
                     
                 </div>
             </div>
