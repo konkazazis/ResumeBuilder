@@ -8,7 +8,7 @@ function create( { details, setDetails, workExperiences, setWorkExperiences, pro
   return (
     <div>
          <header className="h-16 flex justify-center items-center mb-8">
-                <nav className='w-[80%] sticky top-0 flex justify-between'>
+                <nav className='w-[80%] sticky top-0 mt-4 flex justify-between'>
                     <div className='flex items-center '>
                         <Link className='mr-10 hover:scale-110 transition-transform duration-200' to='/'><button><h1 className='text-xl font-semibold italic'>
                             Job-Ready
@@ -16,14 +16,12 @@ function create( { details, setDetails, workExperiences, setWorkExperiences, pro
                     </div>
                     <div className=''>
                         <ul className='flex items-center'>
-                            <Link className='mr-10 hover:scale-110 transition-transform duration-200' to='/home'><button><li>Home</li></button></Link> 
-                            <Link className='mr-10 hover:scale-110 transition-transform duration-200' to='/create'><button><li>Create</li></button></Link> 
-                            <Link className='mr-10 hover:scale-110 transition-transform duration-200' to='/design'><button><li>Design</li></button></Link> 
-                            <li className='cursor-pointer'>
-                      <button>
-                        <img  className=" rounded-full" src="https://picsum.photos/40" />
-                      </button>
-                  </li>
+                            <Link className='mr-10 hover:scale-110 transition-transform duration-200' to='/home'><button><li>Resumes</li></button></Link> 
+                            <Link className='mr-10 hover:scale-110 transition-transform duration-200' to='/settings'><button><li>Settings</li></button></Link> 
+                            <Link className='mr-10 hover:scale-110 transition-transform duration-200' to='/aboutus'><button><li>About us</li></button></Link> 
+                            <button className='cursor-pointer'>
+                                <img  className="rounded-full" src="https://picsum.photos/40" />
+                            </button>
                         </ul>
                     </div>
                 </nav>

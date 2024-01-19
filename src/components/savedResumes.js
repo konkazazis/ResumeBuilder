@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function SavedResumes() {
   return (
@@ -10,9 +11,11 @@ function SavedResumes() {
                   
               </div>
               <div className='w-28 h-28 bg-white shadow-md rounded-md hover:scale-110 transition-transform duration-200 cursor-pointer'>
+                <Link to='/create'>
                   <div className='flex justify-center items-center h-full'>
                       <h1 className='text-4xl'>+</h1>
                   </div>
+                </Link>
               </div>
             </div>
            
