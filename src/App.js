@@ -7,6 +7,7 @@ import Design from './components/design';
 import Home from './components/home';
 import LandingPage from './components/landingpage';
 import AboutUs from './components/aboutus';
+import Settings from './components/settings';
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
         />
         <Route path="/design" element={<Design />} />
         <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </div>
   );
